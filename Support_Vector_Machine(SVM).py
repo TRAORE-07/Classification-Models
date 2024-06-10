@@ -33,12 +33,12 @@ from sklearn.svm import SVC
 classifier = SVC(kernel='linear', random_state=0)
 classifier.fit(x_train,y_train)
 y_pred = classifier.predict(x_test)
-plt.scatter(x_test[:,0], x_test[:,1], c=y_test)
+plt.scatter(x_test[:,0], x_test[:, 1], c=y_test)
 
 #Creation on hyperplane
 w = classifier.coef_[0]
 a = -w[0]/w[1]
-xx = np.linspace(-2.5,2.5)
+xx = np.linspace(-2.5, 2.5)
 yy = a*xx-(classifier.intercept_[0])/w[1]
-plt.plot(xx,yy)
+plt.plot(xx, yy)
 plt.show()
